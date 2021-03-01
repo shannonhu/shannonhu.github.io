@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="animation.js"></script>
+
+  <title>theRoom</title>
+
+  <style>
+    body {
+      background-color: black;
+      position:relative;
+      color: white;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+    }
+    .hidden {
+      display: none;
+    }
+    #text1 {
+      margin:50px;
+    }
+    #text2 {
+      margin:50px;
+      margin-top: 100px;
+    }
+    #text3 {
+      margin-left: 50px;
+      margin-top: 150px;
+    }
+    #text4 {
+      margin-left: 50px;
+      margin-top: 200px;
+      }
+    #img1 {
+      position: fixed;
+      width: 100vw;
+      opacity:.2;
+      display: none;
+    }
+    #umbrella {
+      position: fixed;
+      right: 100px;
+      bottom:100px;
+      width: 200px;
+      cursor: pointer;
+      display: none;
+    }
+    #man {
+      position: fixed;
+      bottom:0vw;
+      right:0vw;
+      width: 20vw;
+      cursor: grab;
+      display: none;
+    }
+    #rainsound {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <img id=img1 src="rain transparent.gif">
+  <div id=text1 class="hidden">Hello<br>Enter the room<br>Lift up to the rain<br>Let them out further<br>Out to the void<br></div>
+  <div id=text2 class="hidden">Find it<br>Everything that escapes<br>Escapes not<br>Let it be<br></div>
+  <div id=text3 class="hidden">Through the void<br>Hides the rain<br>Even out of touch<br></div>
+  <div id=text4 class="hidden">RAIN</div>
+  <img id=umbrella src="redumbrella.png">
+  <audio id=rainsound controls src="LightRain.mp3"></audio>
+  <img id=man src="man.png">
+</body>
+</html>

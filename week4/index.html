@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> RainRoom </title>
+      <link rel="shortcut icon" href="icon.png">
+
+        <style>
+            body {
+              background-image: url('rain gif.gif');
+              background-size: cover;
+              background-attachment: fixed;
+            }
+
+            #part1 {
+                position: static;
+                color: #008ae6;
+                background-color: #ffcc99;
+                text-shadow: 1px 3px 5px blue;
+                border: 6px solid orange;
+                font-size: 30px;
+                font-family: Helvetica;
+                font-weight: bolder;
+                width: 500px;
+            }
+            #part1:hover {
+                position: absolute;
+                top:25vw;
+                color: #008ae6;
+                background-color: #ffcc99;
+                text-shadow: 1px 3px 5px blue;
+                border: 6px solid orange;
+                font-size: 30px;
+                font-family: Helvetica;
+                font-weight: bolder;
+                width: 500px;
+            }
+
+            #part2 {
+                position: absolute;
+                top: 900px;
+                right: 0;
+                color: #1aa3ff;
+                background-color: #ffb366;
+                text-shadow: 1px 3px 7px red;
+                border: 2px solid violet;
+                font-size: 30px;
+                font-family: Helvetica;
+                width: 30vw;
+                z-index: 25;
+                opacity: .7;
+            }
+            #part2:hover {
+                position: absolute;
+                top: 900px;
+                left: 0;
+                color: #1aa3ff;
+                background-color: #ffb366;
+                text-shadow: 1px 3px 7px red;
+                border: 2px solid violet;
+                font-size: 30px;
+                font-family: Helvetica;
+                width: 30vw;
+                z-index: 25;
+                opacity: .7;
+            }
+
+            #part3 {
+                position: static;
+                color: #4db8ff;
+                background-color: #ff9933;
+                text-shadow: 6px 3px 6px yellow;
+                border: 6px solid orange;
+                font-size: 150px;
+                font-family: sans-serif;
+                opacity: .7;
+            }
+            #part3:hover {
+                position: static;
+                color: #4db8ff;
+                background-color: #ff9933;
+                text-shadow: 6px 3px 6px yellow;
+                border: 6px solid orange;
+                font-size: 150px;
+                font-family: sans-serif;
+                opacity: .4;
+            }
+
+            #part4 {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                color: #80ccff;
+                background-color: #804000;
+                text-shadow: 1px 3px 5px yellow;
+                border: 3px solid orange;
+                font-size: 20px;
+                font-family: fantasy;
+            }
+
+            #out1 {
+                position: absolute;
+                color: #80ccff;
+                background-color: #99004d;
+                text-shadow: 3px 3px 3px yellow;
+                border: 6px solid yellow;
+                font-size: 50px;
+                font-family: inherit;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            #out2 {
+              position: static;
+              color: #4db8ff;
+              background-color: #ffd9b3;
+              text-shadow: 1px 3px 1px yellow;
+              border: 6px solid orange;
+              font-size: 150px;
+              font-family: sans-serif;
+              opacity: .5;
+            }
+            #out2:hover{
+              position: static;
+              color: #ffd9b3;
+              background-color: #4db8ff;
+              text-shadow: 1px 3px 1px yellow;
+              border: 6px solid orange;
+              font-size: 150px;
+              padding: 50px;
+              font-family: sans-serif;
+              opacity: .5;
+            }
+
+            #link1 {
+              font-size: 20px;
+            }
+            #link1:visited {
+              color: yellow;
+            }
+            #link1:hover {
+              color: orange;
+            }
+            #link1:active {
+              color: blue;
+            }
+
+            #link2 {
+              font-size: 20px;
+            }
+            #link2:visited {
+              color: yellow;
+            }
+            #link2:hover {
+              color: orange;
+            }
+            #link2:active {
+              color: blue;
+            }
+
+            #img1 {
+                position: sticky;
+                float: center;
+                left:25vw;
+                width:50vw;
+                border-radius:50px;
+            }
+            #img1:hover {
+                position: sticky;
+                float: center;
+                left:35vw;
+                width:30vw;
+                border-radius:50px;
+            }
+
+            #img2 {
+                position: fixed;
+                bottom: 35px;
+                right: 0;
+                width:150px;
+                border-radius:20px;
+                z-index:15;
+            }
+
+            iframe {
+                position:fixed;
+                width:40vw;
+                top:90px;
+                right: 0px;
+                border-radius:10px;
+                opacity: .7;
+            }
+        </style>
+    </head>
+<body>
+    <img id=img1 src="rainroom1.jpg">
+    <img id=img2 src="rain_room3.jpg">
+    <div id=part1>In 2015, My friend and I heard about this interesting art installation being shown in Shanghai, called “Rain Room”, and we decided to take a look. <span id=out1>This “Rain Room” was said to have visitors walk through a downpour without getting wet.</span></div>
+    <div id=part2>At that time, for me, art was something that’s placed in distance between the viewers. Thus, when I was standing in the downpour, interacting with the rain, I was truly amazed.</div>
+    <div id=part3>The idea of creating an interactive experience, allowing viewers to be in the art and feel it, was especially inspiring.<br> Walking in the rain, watching the rain that surrounded me, reaching my arms out to stop the rain, <span id=out2>my every movement made my relationship with Rain Room different than others.</span> That experience changed my thoughts on art, and held me interested in interactive art.</div>
+    <div id=part4>(Rain Room mentioned here is an experiential artwork by Hannes Koch and Florian Ortkrass)</div>
+    <div id=link1> <a href=page2.html>link to another page</a></div>
+    <a id=link1 href="https://en.wikipedia.org/wiki/Rain_Room">Rain Room's Wiki</a><br>
+    <a id=link2 href="https://www.random-international.com/rain-room-2012">Rain Room on Random International</a><br>
+    <iframe width="695" height="391" src="https://www.youtube.com/embed/7cem71cR0S0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <audio controls src="rain.mp3"></audio>
+</body>
+</html>
