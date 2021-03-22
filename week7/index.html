@@ -7,7 +7,7 @@
   </head>
   <body>
     <a-scene>
-        <a-cylinder id="base1" color="blue" height=".3" radius="3" position="0 -5 -10">
+        <a-cylinder id="base1" color="blue" height=".3" radius="3" position="0 0 -10">
         <a-cylinder id="column1" color="yellow" height="3" radius=".5" position="2 1.5 0"></a-cylinder>
         <a-cylinder id="column2" color="yellow" height="3" radius=".5" position="0 1.5 -2"></a-cylinder>
         <a-cylinder id="column3" color="yellow" height="3" radius=".5" position="-1 1.5 2"></a-cylinder>
@@ -15,32 +15,39 @@
         <a-box id="floatBox1" src="https://c.stocksy.com/a/9Zi600/z9/1601283.jpg"
          position="0 6 0" rotation="0 45 45" scale="2.5 2.5 2.5"
          animation="property: object3D.position.y; to: 7; dir: alternate; dur: 2000; loop: true"
+         animation__click="property: scale; to: 4 4 4; dur: 300; startEvents: click">
          ></a-box>
         </a-cylinder>
         
-        <a-box id="base2" color="purple" position="-10 -5 -5" scale="5 .3 5">
+        <a-box id="base2" color="purple" position="-10 0 -5" scale="5 .3 5">
           <a-cylinder id="column2-1" color="orange" height="5" radius=".1" position=".3 2.5 -0.3"></a-cylinder>
           <a-cylinder id="column2-2" color="orange" height="5" radius=".1" position=".3 2.5 .3"></a-cylinder>
           <a-cylinder id="column2-3" color="orange" height="5" radius=".1" position="-0.3 2.5 -0.3"></a-cylinder>
           <a-cylinder id="column2-4" color="orange" height="5" radius=".1" position="-0.3 2.5 .3"></a-cylinder>
         </a-box>
-        <a-box id="middle2" src="https://c.stocksy.com/a/9Zi600/z9/1601283.jpg" position="-10 -2 -5" scale="5 3 5"></a-box>
+        <a-box id="middle2" src="https://c.stocksy.com/a/9Zi600/z9/1601283.jpg" position="-10 3 -5" scale="5 3 5"></a-box>
 
-        <!-- <a-box id="base3" color="purple" position="-10 -5 -5" scale="5 .3 5">
-          <a-cylinder id="column3-1" color="orange" height="5" radius=".1" position=".3 2.5 -0.3"></a-cylinder>
-          <a-cylinder id="column3-2" color="orange" height="5" radius=".1" position=".3 2.5 .3"></a-cylinder>
-          <a-cylinder id="column3-3" color="orange" height="5" radius=".1" position="-0.3 2.5 -0.3"></a-cylinder>
-          <a-cylinder id="column3-4" color="orange" height="5" radius=".1" position="-0.3 2.5 .3"></a-cylinder>
+        <a-box id="base3" color="green" position="0 0 10" scale="5 .3 5">
+          <a-cylinder id="column3-1" color="turquoise" height="5" radius=".1" position=".3 2.5 -0.3"></a-cylinder>
+          <a-cylinder id="column3-2" color="turquoise" height="5" radius=".1" position=".3 2.5 .3"></a-cylinder>
+          <a-cylinder id="column3-3" color="turquoise" height="5" radius=".1" position="-0.3 2.5 -0.3"></a-cylinder>
+          <a-cylinder id="column3-4" color="turquoise" height="5" radius=".1" position="-0.3 2.5 .3"></a-cylinder>
         </a-box>
-        <a-box id="middle3" color="purple" position="-10 -2 -5" scale="5 3 5"></a-box> -->
+        <a-box id="middle3" color="green" position="0 3 10" scale="5 3 5">
+          <a-cylinder id="column3-1" color="turquoise" height="5" radius=".1" position=".3 2.5 -0.3"></a-cylinder>
+          <a-cylinder id="column3-2" color="turquoise" height="5" radius=".1" position=".3 2.5 .3"></a-cylinder>
+          <a-cylinder id="column3-3" color="turquoise" height="5" radius=".1" position="-0.3 2.5 -0.3"></a-cylinder>
+          <a-cylinder id="column3-4" color="turquoise" height="5" radius=".1" position="-0.3 2.5 .3"></a-cylinder>
+        </a-box>
+        <a-box id="middle3" color="green" position="0 15 10" scale="5 5 5"></a-box>
+        </a-box>
 
-        <a-sphere color="red" radius="3" position="0 10 5">
-
-        </a-sphere>
+        <a-sphere color="red" radius="3" position="0 10 0"></a-sphere>
   
-        <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+        <a-sky color="lightblue"></a-sky>
         <a-camera>
             <a-cursor>mouseenter</a-cursor>
+            <a-cursor>mouseclick</a-cursor>
         </a-camera>
           <a-assets>
             <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay
@@ -48,15 +55,6 @@
           </a-assets>
           <a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true"
     position="-3 1 -4"></a-sound>
-    <a-entity
-        text="value: City Apartments; color: #BBB"
-        position="-5 10 -6"
-        scale="3 3 3"></a-entity>
       </a-scene>
   </body>
 </html>
-
-        <!--   animation="property: object3D.position.y; to: 3; dir: alternate; dur: 2000; loop: true>
-        animation="property: object3D.position.y; to: 0; dir: alternate; dur: 2000; loop: true"
-        animation__click="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
-        animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"> -->
