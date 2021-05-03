@@ -1,0 +1,98 @@
+<!-- reference: https://codepen.io/blurblue/pen/zqQzRR 
+                https://codepen.io/SitePoint/pen/NWxKgxN-->
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://code.createjs.com/easeljs-0.8.1.min.js"></script>
+  <script src="https://code.createjs.com/tweenjs-0.6.1.min.js"></script>
+  <script src="animation.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <title>It's Raining</title>
+</head>
+
+<body>
+  <audio autoplay>
+    <source src="LightRain.mp3" type="audio/mpeg">
+  </audio>
+  <img id=img1 src="rain transparent.gif">
+  <div class="click title">
+    It's Raining 
+</div>
+<div class="image click scene1">
+  <img id=umbrella1 src="images/umbrella1.png">
+  <img id=man1 src="images/manwalk.gif">
+</div>
+<div class="image scene2-1">
+  <img id=man2 src="images/manwalk2.gif">
+</div>
+<div class="image text scene2-1-1">
+  "Not prepared for the Rain,huh"
+</div>
+<div class="image text scene2-1-2">
+  "Do you like Rain?"
+</div>
+<div class="image scene2-1-3" id=form>
+  <canvas id="textRain"></canvas>
+  <form>
+    <input type="text" id="response" name="response">
+    <input type="button" id="submit" value="OK">
+  </form>
+</div>
+<div class="image text click scene3-1-1">
+  "Well I see"
+</div>
+<div class="image scene3-1-2">
+  <img id=home src="images/home.png">
+</div>
+<div class="image text scene3-1-3">
+  "So this is you"
+</div>
+<div class="image text scene3-1-4">
+  "Take care"
+</div>
+<div class="image text scene3-1-5">
+  "It's still raining"
+</div>
+<div class="image scene2-2">
+  <img id=road src="images/road.png">
+  <img id=umbrella2 src="images/umbrella.gif">
+</div>
+<div class="image click scene3-2">
+  <img id=road2 src="images/road.png">
+  <img id=dog src="images/dog.png">
+  <img id=store src="images/shop.png">
+</div>
+<div class="image text scene4-1-1">
+  "Welcome to the shop"
+</div>
+<div class="image scene4-1-2">
+  <img id=shelf src="images/shelf.png">
+    <img class="items" id=1 src="images/1.png">
+    <img class="items" id=2 src="images/2.png">
+    <img class="items" id=3 src="images/3.png">
+    <img class="items" id=4 src="images/4.png">
+    <img class="items" id=5 src="images/5.png">
+    <img class="items" id=6 src="images/6.png">
+</div>
+<div class="image scene4-2-1">
+  <img id=dogwalk src="images/dogwalk.gif">
+</div>
+<div class="image scene4-2-2">
+  <img id=pond src="images/pond.gif">
+</div>
+<div class="image text scene4-2-3">
+  You're falling into the pond
+</div>
+<div class="image text scene4-2-4" id="timer">
+  <div>
+    <span class="minutes"></span>
+  </div>
+  <div>
+    <span class="seconds"></span>
+  </div>
+</div>
+</body>
+</html>
