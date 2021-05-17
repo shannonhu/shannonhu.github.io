@@ -41,15 +41,269 @@ $(document).ready(function() {
     $(".scene4-1-1").fadeIn(1000);
     setTimeout(function(){$(".scene4-1-1").fadeOut(1000);}, 4000);
     setTimeout(function(){$(".scene4-1-2").fadeIn(1000);}, 5000);
-    document.getElementById("1").style.left = 50 + 'px';
-    document.getElementById("2").style.right = 200 + 'px';
-    document.getElementById("3").style.left = 550 + 'px';
-    document.getElementById("4").style.right = 80 + 'px';
-    document.getElementById("5").style.right = 170 + 'px';
-    document.getElementById("6").style.left = 260 + 'px';
-      $(".items").fadeIn(1000);
-      setTimeout(function(){$(".scene4-1-2").fadeOut(1000);}, 12000);
-      setTimeout(function(){$(".scene3-2").fadeIn(1000);}, 13000);
+    $("#a1").mouseover(function(){
+      var canvas = document.getElementById("shopRain");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var context = canvas.getContext("2d");
+      var img = new Image();
+      img.src = "images/1.png";
+      var numOfRain = 20;
+      var rainFall = [];
+      for (var i = 0; i < numOfRain; i++) {
+        var x = Math.floor(Math.random()*canvas.width);
+        var y = Math.floor(Math.random()*canvas.height);
+        rainFall[i] = new rain(x,y);
+      };
+      function rain(x,y) {
+        this.x = x;
+        this.y = y;
+        this.show = function() {
+          context.drawImage(img, this.x, this.y, 100,100);
+        };
+        this.fall = function() {
+          this.y += 1;
+          if (this.y > canvas.height) {
+            this.y = 0;
+          };
+        };
+      };
+      
+      function drawRain() {
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width, canvas.height);
+        for (var i = 0; i < numOfRain; i++) {
+          rainFall[i].show();
+          rainFall[i].fall();
+        };
+      };
+      
+      function updateRain() {
+        drawRain();
+        window.requestAniamtionFrame(updateRain);
+      };
+      updateRain();
+    });
+    $("#a2").mouseover(function(){
+      var canvas = document.getElementById("shopRain");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var context = canvas.getContext("2d");
+      var img = new Image();
+      img.src = "images/2.png";
+      var numOfRain = 20;
+      var rainFall = [];
+      for (var i = 0; i < numOfRain; i++) {
+        var x = Math.floor(Math.random()*canvas.width);
+        var y = Math.floor(Math.random()*canvas.height);
+        rainFall[i] = new rain(x,y);
+      };
+      function rain(x,y) {
+        this.x = x;
+        this.y = y;
+        this.show = function() {
+          context.drawImage(img, this.x, this.y, 100,100);
+        };
+        this.fall = function() {
+          this.y += 1;
+          if (this.y > canvas.height) {
+            this.y = 0;
+          };
+        };
+      };
+      
+      function drawRain() {
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width, canvas.height);
+        for (var i = 0; i < numOfRain; i++) {
+          rainFall[i].show();
+          rainFall[i].fall();
+        };
+      };
+      
+      function updateRain() {
+        drawRain();
+        window.requestAniamtionFrame(updateRain);
+      };
+      updateRain();
+    });
+    $("#a3").mouseover(function(){
+      var canvas = document.getElementById("shopRain");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var context = canvas.getContext("2d");
+      var img = new Image();
+      img.src = "images/3.png";
+      var numOfRain = 20;
+      var rainFall = [];
+      for (var i = 0; i < numOfRain; i++) {
+        var x = Math.floor(Math.random()*canvas.width);
+        var y = Math.floor(Math.random()*canvas.height);
+        rainFall[i] = new rain(x,y);
+      };
+      function rain(x,y) {
+        this.x = x;
+        this.y = y;
+        this.show = function() {
+          context.drawImage(img, this.x, this.y, 100,100);
+        };
+        this.fall = function() {
+          this.y += 1;
+          if (this.y > canvas.height) {
+            this.y = 0;
+          };
+        };
+      };
+      
+      function drawRain() {
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width, canvas.height);
+        for (var i = 0; i < numOfRain; i++) {
+          rainFall[i].show();
+          rainFall[i].fall();
+        };
+      };
+      
+      function updateRain() {
+        drawRain();
+        window.requestAniamtionFrame(updateRain);
+      };
+      updateRain();
+    });
+    $("#a4").mouseover(function(){
+      var canvas = document.getElementById("shopRain");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var context = canvas.getContext("2d");
+      var img = new Image();
+      img.src = "images/4.png";
+      var numOfRain = 20;
+      var rainFall = [];
+      for (var i = 0; i < numOfRain; i++) {
+        var x = Math.floor(Math.random()*canvas.width);
+        var y = Math.floor(Math.random()*canvas.height);
+        rainFall[i] = new rain(x,y);
+      };
+      function rain(x,y) {
+        this.x = x;
+        this.y = y;
+        this.show = function() {
+          context.drawImage(img, this.x, this.y, 100,100);
+        };
+        this.fall = function() {
+          this.y += 1;
+          if (this.y > canvas.height) {
+            this.y = 0;
+          };
+        };
+      };
+      
+      function drawRain() {
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width, canvas.height);
+        for (var i = 0; i < numOfRain; i++) {
+          rainFall[i].show();
+          rainFall[i].fall();
+        };
+      };
+      
+      function updateRain() {
+        drawRain();
+        window.requestAniamtionFrame(updateRain);
+      };
+      updateRain();
+    });
+    $("#a5").mouseover(function(){
+      var canvas = document.getElementById("shopRain");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var context = canvas.getContext("2d");
+      var img = new Image();
+      img.src = "images/5.png";
+      var numOfRain = 20;
+      var rainFall = [];
+      for (var i = 0; i < numOfRain; i++) {
+        var x = Math.floor(Math.random()*canvas.width);
+        var y = Math.floor(Math.random()*canvas.height);
+        rainFall[i] = new rain(x,y);
+      };
+      function rain(x,y) {
+        this.x = x;
+        this.y = y;
+        this.show = function() {
+          context.drawImage(img, this.x, this.y, 100,100);
+        };
+        this.fall = function() {
+          this.y += 1;
+          if (this.y > canvas.height) {
+            this.y = 0;
+          };
+        };
+      };
+      
+      function drawRain() {
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width, canvas.height);
+        for (var i = 0; i < numOfRain; i++) {
+          rainFall[i].show();
+          rainFall[i].fall();
+        };
+      };
+      
+      function updateRain() {
+        drawRain();
+        window.requestAniamtionFrame(updateRain);
+      };
+      updateRain();
+    });
+    $("#a6").mouseover(function(){
+      var canvas = document.getElementById("shopRain");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var context = canvas.getContext("2d");
+      var img = new Image();
+      img.src = "images/6.png";
+      var numOfRain = 20;
+      var rainFall = [];
+      for (var i = 0; i < numOfRain; i++) {
+        var x = Math.floor(Math.random()*canvas.width);
+        var y = Math.floor(Math.random()*canvas.height);
+        rainFall[i] = new rain(x,y);
+      };
+      function rain(x,y) {
+        this.x = x;
+        this.y = y;
+        this.show = function() {
+          context.drawImage(img, this.x, this.y, 100,100);
+        };
+        this.fall = function() {
+          this.y += 1;
+          if (this.y > canvas.height) {
+            this.y = 0;
+          };
+        };
+      };
+      
+      function drawRain() {
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width, canvas.height);
+        for (var i = 0; i < numOfRain; i++) {
+          rainFall[i].show();
+          rainFall[i].fall();
+        };
+      };
+      
+      function updateRain() {
+        drawRain();
+        window.requestAniamtionFrame(updateRain);
+      };
+      updateRain();
+    });
+    $("#exit").click(function(){
+      $(".scene4-1-2").fadeOut(1000);
+      $("#img1").fadeIn(1000);
+      $(".scene3-2").fadeIn(1000);
+    });
   });
   $("#dog").click(function(){
     $(".scene3-2").fadeOut(1000);
@@ -214,3 +468,5 @@ var canvasDraw = {
     }, false);
       }
 };
+
+

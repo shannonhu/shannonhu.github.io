@@ -130,7 +130,8 @@ input[type="text"],
 input[type="button"]:focus {
   border: 3px solid rgb(203, 203, 203);
 }
-#textRain {
+#textRain,
+#shopRain {
   position: fixed;
   top: 0;
   left: 0;
@@ -174,20 +175,44 @@ input[type="button"]:focus {
   width: 60vw;
   left: 20vw;
 }
-.items {
+#a1 {
   position: absolute;
-  width: 200px;
-  animation-name: fall;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  width: 10vw;
+  left: 46vw;
+  top: 2vw;
 }
-@keyframes fall {
-  from {
-    top: -100px;
-  }
-  to {
-    top: 100vh;
-  }
+#a2 {
+  position: absolute;
+  width: 10vw;
+  left: 37vw;
+  top: 12vw;
+}
+#a3 {
+  position: absolute;
+  width: 10vw;
+  left: 55vw;
+  top: 12vw;
+}
+#a4 {
+  position: absolute;
+  width: 10vw;
+  left: 33vw;
+  top: 22vw;
+}
+#a5 {
+  position: absolute;
+  width: 10vw;
+  left: 45vw;
+  top: 23vw;
+}
+#a6 {
+  position: absolute;
+  width: 10vw;
+  left: 50vw;
+  top: 33vw;
+}
+#exit {
+  position: absolute;
+  right: 10vw;
+  top: 40vw;
 }
