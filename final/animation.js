@@ -41,270 +41,76 @@ $(document).ready(function() {
     $(".scene4-1-1").fadeIn(1000);
     setTimeout(function(){$(".scene4-1-1").fadeOut(1000);}, 4000);
     setTimeout(function(){$(".scene4-1-2").fadeIn(1000);}, 5000);
-    $("#a1").mouseover(function(){
-      var canvas = document.getElementById("shopRain");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      var context = canvas.getContext("2d");
-      var img = new Image();
-      img.src = "images/1.png";
-      var numOfRain = 20;
-      var rainFall = [];
+    var canvas = document.getElementById("shopRain");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    var context = canvas.getContext("2d");
+    var defaultNumOfObj = 20;
+    var rainFall = []; 
+  
+    function fallingObj(x, y, img) {
+      this.x = x;
+      this.y = y;
+      this.img = img;
+
+      this.show = function() {
+        context.drawImage(this.img, this.x, this.y, 100,90);
+      };
+
+      this.fall = function() {
+        this.y += 1;
+        if (this.y > canvas.height) {
+          this.y = 0;
+        };
+      };
+    };
+
+    function drawFallingObj(numOfRain) {
+      context.fillStyle = "black";
+      context.fillRect(0,0,canvas.width, canvas.height);
+      if (numOfRain == rainFall.length) {
+        for (var i = 0; i < numOfRain; i++) {
+          rainFall[i].show(); 
+          rainFall[i].fall();
+        };
+        window.requestAnimationFrame(function() {drawFallingObj(numOfRain)});
+      }
+    };
+
+    function createFallingObj(img, numOfRain) {
       for (var i = 0; i < numOfRain; i++) {
         var x = Math.floor(Math.random()*canvas.width);
         var y = Math.floor(Math.random()*canvas.height);
-        rainFall[i] = new rain(x,y);
+        rainFall[i] = new fallingObj(x,y, img);
       };
-      function rain(x,y) {
-        this.x = x;
-        this.y = y;
-        this.show = function() {
-          context.drawImage(img, this.x, this.y, 100,100);
-        };
-        this.fall = function() {
-          this.y += 1;
-          if (this.y > canvas.height) {
-            this.y = 0;
-          };
-        };
-      };
-      
-      function drawRain() {
-        context.fillStyle = "black";
-        context.fillRect(0,0,canvas.width, canvas.height);
-        for (var i = 0; i < numOfRain; i++) {
-          rainFall[i].show();
-          rainFall[i].fall();
-        };
-      };
-      
-      function updateRain() {
-        drawRain();
-        window.requestAniamtionFrame(updateRain);
-      };
-      updateRain();
-    });
-    $("#a2").mouseover(function(){
-      var canvas = document.getElementById("shopRain");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      var context = canvas.getContext("2d");
+    }
+
+    function clearFallingObj() {
+      context.fillStyle = "black";
+      context.fillRect(0,0,canvas.width, canvas.height);
+      rainFall.length = 0;
+    }
+
+    $(".items").mouseover(function(e) { 
+      var id = $(e.target).attr('id');
       var img = new Image();
-      img.src = "images/2.png";
-      var numOfRain = 20;
-      var rainFall = [];
-      for (var i = 0; i < numOfRain; i++) {
-        var x = Math.floor(Math.random()*canvas.width);
-        var y = Math.floor(Math.random()*canvas.height);
-        rainFall[i] = new rain(x,y);
-      };
-      function rain(x,y) {
-        this.x = x;
-        this.y = y;
-        this.show = function() {
-          context.drawImage(img, this.x, this.y, 100,100);
-        };
-        this.fall = function() {
-          this.y += 1;
-          if (this.y > canvas.height) {
-            this.y = 0;
-          };
-        };
-      };
-      
-      function drawRain() {
-        context.fillStyle = "black";
-        context.fillRect(0,0,canvas.width, canvas.height);
-        for (var i = 0; i < numOfRain; i++) {
-          rainFall[i].show();
-          rainFall[i].fall();
-        };
-      };
-      
-      function updateRain() {
-        drawRain();
-        window.requestAniamtionFrame(updateRain);
-      };
-      updateRain();
+      img.src = "images/"+id.charAt(1)+".png";
+      createFallingObj(img, defaultNumOfObj);
+      window.requestAnimationFrame(function() {drawFallingObj(defaultNumOfObj)});
     });
-    $("#a3").mouseover(function(){
-      var canvas = document.getElementById("shopRain");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      var context = canvas.getContext("2d");
-      var img = new Image();
-      img.src = "images/3.png";
-      var numOfRain = 20;
-      var rainFall = [];
-      for (var i = 0; i < numOfRain; i++) {
-        var x = Math.floor(Math.random()*canvas.width);
-        var y = Math.floor(Math.random()*canvas.height);
-        rainFall[i] = new rain(x,y);
-      };
-      function rain(x,y) {
-        this.x = x;
-        this.y = y;
-        this.show = function() {
-          context.drawImage(img, this.x, this.y, 100,100);
-        };
-        this.fall = function() {
-          this.y += 1;
-          if (this.y > canvas.height) {
-            this.y = 0;
-          };
-        };
-      };
-      
-      function drawRain() {
-        context.fillStyle = "black";
-        context.fillRect(0,0,canvas.width, canvas.height);
-        for (var i = 0; i < numOfRain; i++) {
-          rainFall[i].show();
-          rainFall[i].fall();
-        };
-      };
-      
-      function updateRain() {
-        drawRain();
-        window.requestAniamtionFrame(updateRain);
-      };
-      updateRain();
+
+    $(".items").mouseout(function() { 
+      clearFallingObj();
     });
-    $("#a4").mouseover(function(){
-      var canvas = document.getElementById("shopRain");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      var context = canvas.getContext("2d");
-      var img = new Image();
-      img.src = "images/4.png";
-      var numOfRain = 20;
-      var rainFall = [];
-      for (var i = 0; i < numOfRain; i++) {
-        var x = Math.floor(Math.random()*canvas.width);
-        var y = Math.floor(Math.random()*canvas.height);
-        rainFall[i] = new rain(x,y);
-      };
-      function rain(x,y) {
-        this.x = x;
-        this.y = y;
-        this.show = function() {
-          context.drawImage(img, this.x, this.y, 100,100);
-        };
-        this.fall = function() {
-          this.y += 1;
-          if (this.y > canvas.height) {
-            this.y = 0;
-          };
-        };
-      };
-      
-      function drawRain() {
-        context.fillStyle = "black";
-        context.fillRect(0,0,canvas.width, canvas.height);
-        for (var i = 0; i < numOfRain; i++) {
-          rainFall[i].show();
-          rainFall[i].fall();
-        };
-      };
-      
-      function updateRain() {
-        drawRain();
-        window.requestAniamtionFrame(updateRain);
-      };
-      updateRain();
-    });
-    $("#a5").mouseover(function(){
-      var canvas = document.getElementById("shopRain");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      var context = canvas.getContext("2d");
-      var img = new Image();
-      img.src = "images/5.png";
-      var numOfRain = 20;
-      var rainFall = [];
-      for (var i = 0; i < numOfRain; i++) {
-        var x = Math.floor(Math.random()*canvas.width);
-        var y = Math.floor(Math.random()*canvas.height);
-        rainFall[i] = new rain(x,y);
-      };
-      function rain(x,y) {
-        this.x = x;
-        this.y = y;
-        this.show = function() {
-          context.drawImage(img, this.x, this.y, 100,100);
-        };
-        this.fall = function() {
-          this.y += 1;
-          if (this.y > canvas.height) {
-            this.y = 0;
-          };
-        };
-      };
-      
-      function drawRain() {
-        context.fillStyle = "black";
-        context.fillRect(0,0,canvas.width, canvas.height);
-        for (var i = 0; i < numOfRain; i++) {
-          rainFall[i].show();
-          rainFall[i].fall();
-        };
-      };
-      
-      function updateRain() {
-        drawRain();
-        window.requestAniamtionFrame(updateRain);
-      };
-      updateRain();
-    });
-    $("#a6").mouseover(function(){
-      var canvas = document.getElementById("shopRain");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      var context = canvas.getContext("2d");
-      var img = new Image();
-      img.src = "images/6.png";
-      var numOfRain = 20;
-      var rainFall = [];
-      for (var i = 0; i < numOfRain; i++) {
-        var x = Math.floor(Math.random()*canvas.width);
-        var y = Math.floor(Math.random()*canvas.height);
-        rainFall[i] = new rain(x,y);
-      };
-      function rain(x,y) {
-        this.x = x;
-        this.y = y;
-        this.show = function() {
-          context.drawImage(img, this.x, this.y, 100,100);
-        };
-        this.fall = function() {
-          this.y += 1;
-          if (this.y > canvas.height) {
-            this.y = 0;
-          };
-        };
-      };
-      
-      function drawRain() {
-        context.fillStyle = "black";
-        context.fillRect(0,0,canvas.width, canvas.height);
-        for (var i = 0; i < numOfRain; i++) {
-          rainFall[i].show();
-          rainFall[i].fall();
-        };
-      };
-      
-      function updateRain() {
-        drawRain();
-        window.requestAniamtionFrame(updateRain);
-      };
-      updateRain();
-    });
+
     $("#exit").click(function(){
       $(".scene4-1-2").fadeOut(1000);
       $("#img1").fadeIn(1000);
       $(".scene3-2").fadeIn(1000);
     });
   });
+
   $("#dog").click(function(){
     $(".scene3-2").fadeOut(1000);
     $(".scene4-2-1").fadeIn(1000);
